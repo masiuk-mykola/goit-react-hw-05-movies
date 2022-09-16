@@ -17,10 +17,10 @@ export const Movies = () => {
 
   return (
     <Box>
-      <form onSubmit={handleSubmit}>
+      <Box as="form" pl={3} onSubmit={handleSubmit}>
         <input type="text" name="query" onChange={handleChange} />
         <button type="submit">Submit</button>
-      </form>
+      </Box>
       <MovieSearchList query={query} />
     </Box>
   );

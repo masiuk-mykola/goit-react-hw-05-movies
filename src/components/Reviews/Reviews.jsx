@@ -1,3 +1,4 @@
+import { Box } from 'components/Box';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReview } from 'services/movieAPI';
@@ -22,10 +23,12 @@ export const Reviews = () => {
           <ul>
             {movieReview.map(({ author, content }) => {
               return (
-                <li key={author}>
-                  <b>{author}</b>
-                  <p>{content}</p>
-                </li>
+                <Box as="li" mb={3} key={author}>
+                  <b>Author: {author}</b>
+                  <Box as="p" mt={2}>
+                    {content}
+                  </Box>
+                </Box>
               );
             })}
           </ul>

@@ -1,3 +1,4 @@
+import { Box } from 'components/Box';
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import { getSearchMovie } from 'services/movieAPI';
@@ -27,7 +28,7 @@ export const MovieSearchList = ({ query }) => {
   return (
     <>
       {movieList && (
-        <ul>
+        <Box as="ul" pl={3}>
           {movieList.map(({ id, title }) => {
             return (
               <li key={id}>
@@ -37,7 +38,7 @@ export const MovieSearchList = ({ query }) => {
               </li>
             );
           })}
-        </ul>
+        </Box>
       )}
     </>
   );
