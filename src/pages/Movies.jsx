@@ -3,7 +3,7 @@ import { MovieSearchList } from 'components/MovieSearchList/MovieSearchList';
 import { useState } from 'react';
 
 export const Movies = () => {
-  const [inputValue, setInputSearch] = useState('');
+  const [inputSearch, setInputSearch] = useState('');
   const [query, setQuery] = useState('');
 
   const handleChange = e => {
@@ -11,13 +11,13 @@ export const Movies = () => {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    setQuery(inputValue);
+    setQuery(inputSearch);
   };
 
   return (
     <Box>
       <form onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} />
+        <input type="text" name="query" onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
       <MovieSearchList query={query} />

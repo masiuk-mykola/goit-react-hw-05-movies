@@ -35,7 +35,13 @@ export const MovieDetails = () => {
 
   return (
     <Box as="main" p={3}>
-      <Link to={location.pathname.includes('movies') ? '/movies' : '/home'}>
+      <Link
+        to={
+          location.pathname.includes('movies')
+            ? `${location.state.from.pathname}${location.state.from.search}`
+            : '/home'
+        }
+      >
         Back
       </Link>
       <Box display="flex" gridGap="20px">
