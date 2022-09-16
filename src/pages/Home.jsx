@@ -1,10 +1,11 @@
+import { Box } from 'components/Box';
 import { MoviesList } from '../components/MoviesList/MoviesList';
 
 export const Home = () => {
   return (
-    <main>
+    <Box as="main" pl={3}>
       <h1>Trending today</h1>
       <MoviesList />
-    </main>
+    </Box>
   );
 };

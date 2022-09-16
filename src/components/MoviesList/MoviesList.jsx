@@ -1,3 +1,4 @@
+import { Box } from 'components/Box';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getMoviesList } from 'services/movieAPI';
@@ -12,7 +13,7 @@ export const MoviesList = () => {
   return (
     <>
       {movieList && (
-        <ul>
+        <Box as="ul" m={0} pl={3}>
           {movieList.map(({ id, title }) => {
             return (
               <li key={id}>
@@ -20,7 +21,7 @@ export const MoviesList = () => {
               </li>
             );
           })}
-        </ul>
+        </Box>
       )}
     </>
   );
