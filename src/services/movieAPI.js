@@ -25,3 +25,25 @@ export const getMovieInfo = async movieId => {
     console.log(error);
   }
 };
+
+export const getMovieCredits = async movieId => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${key}&language=en-US`;
+
+  try {
+    const movies = await axios.get(url);
+    return movies.data.cast;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getMovieReview = async movieId => {
+  const url = `https://api.themoviedb.org/3/movie/${movieId}/reviews?api_key=${key}&language=en-US`;
+
+  try {
+    const movies = await axios.get(url);
+    return movies.data.results;
+  } catch (error) {
+    console.log(error);
+  }
+};

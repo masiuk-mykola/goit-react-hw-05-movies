@@ -1,6 +1,6 @@
 import { Box } from 'components/Box';
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/movieAPI';
 
 export const MovieDetails = () => {
@@ -54,6 +54,16 @@ export const MovieDetails = () => {
           <p>{genreList}</p>
         </Box>
       </Box>
+      <p>Additional information</p>
+      <ul>
+        <li>
+          <Link to="cast">Cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+        </li>
+      </ul>
+      <Outlet />
     </Box>
   );
 };
