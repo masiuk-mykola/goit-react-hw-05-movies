@@ -14,16 +14,15 @@ export const Reviews = () => {
     return;
   }
 
-  console.log(movieReview);
   return (
     <div>
       <h3>Movie review</h3>
       <ul>
-        {movieReview.map(item => {
+        {movieReview.map(({ author, content }) => {
           return (
-            <li key={item.author}>
-              <b>{item.author}</b>
-              <p>{item.content}</p>
+            <li key={author}>
+              <b>{author}</b>
+              <p>{content}</p>
             </li>
           );
         })}

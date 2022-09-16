@@ -1,12 +1,13 @@
 import { Box } from 'components/Box';
 import { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieInfo } from 'services/movieAPI';
 
 export const MovieDetails = () => {
   const [movieInfo, setmovieInfo] = useState(null);
 
   const { id } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
     getMovieInfo(id).then(setmovieInfo);
@@ -34,7 +35,9 @@ export const MovieDetails = () => {
 
   return (
     <Box as="main" p={3}>
-      <Link to="/home">Back</Link>
+      <Link to={location.pathname.includes('movies') ? '/movies' : '/home'}>
+        Back
+      </Link>
       <Box display="flex" gridGap="20px">
         <img
           src={`https://image.tmdb.org/t/p/w500/${poster_path}`}

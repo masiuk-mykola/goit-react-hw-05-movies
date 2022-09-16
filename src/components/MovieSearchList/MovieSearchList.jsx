@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getMoviesList } from 'services/movieAPI';
+import { getSearchMovie } from 'services/movieAPI';
 
-export const MoviesList = () => {
+export const MovieSearchList = ({ query }) => {
   const [movieList, setmovieList] = useState(null);
 
   useEffect(() => {
-    getMoviesList().then(setmovieList);
-  }, []);
+    if (query === '') {
+      return;
+    }
+    getSearchMovie(query).then(setmovieList);
+  }, [query]);
 
   return (
     <>
