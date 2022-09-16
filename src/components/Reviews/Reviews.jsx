@@ -15,18 +15,24 @@ export const Reviews = () => {
   }
 
   return (
-    <div>
-      <h3>Movie review</h3>
-      <ul>
-        {movieReview.map(({ author, content }) => {
-          return (
-            <li key={author}>
-              <b>{author}</b>
-              <p>{content}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <>
+      {movieReview.length !== 0 ? (
+        <div>
+          <h3>Movie review</h3>
+          <ul>
+            {movieReview.map(({ author, content }) => {
+              return (
+                <li key={author}>
+                  <b>{author}</b>
+                  <p>{content}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        <h3>There is no review</h3>
+      )}
+    </>
   );
 };

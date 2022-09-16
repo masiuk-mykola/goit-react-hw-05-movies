@@ -11,6 +11,7 @@ export const Movies = () => {
   };
   const handleSubmit = e => {
     e.preventDefault();
+    e.target.reset();
     setQuery(inputSearch);
   };
 
