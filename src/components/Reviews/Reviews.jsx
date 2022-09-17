@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieReview } from 'services/movieAPI';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { id } = useParams();
   const [movieReview, setMovieReview] = useState(null);
 
@@ -21,9 +21,9 @@ export const Reviews = () => {
         <div>
           <h3>Movie review</h3>
           <ul>
-            {movieReview.map(({ author, content }) => {
+            {movieReview.map(({ author, content, id }) => {
               return (
-                <Box as="li" mb={3} key={author}>
+                <Box as="li" mb={3} key={id}>
                   <b>Author: {author}</b>
                   <Box as="p" mt={2}>
                     {content}
@@ -39,3 +39,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;

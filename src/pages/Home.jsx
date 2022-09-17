@@ -1,7 +1,7 @@
 import { Box } from 'components/Box';
 import { MoviesList } from '../components/MoviesList/MoviesList';
 
-export const Home = () => {
+const Home = () => {
   return (
     <Box as="main" pl={3}>
       <h1>Trending today</h1>
@@ -9,3 +9,5 @@ export const Home = () => {
     </Box>
   );
 };
+
+export default Home;

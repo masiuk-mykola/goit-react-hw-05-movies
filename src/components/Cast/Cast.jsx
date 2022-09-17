@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'services/movieAPI';
 import { CastList } from './Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
   const [movieCredits, setMovieCredits] = useState(null);
 
@@ -33,3 +33,5 @@ export const Cast = () => {
     </CastList>
   );
 };
+
+export default Cast;
